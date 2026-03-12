@@ -133,4 +133,4 @@ Collect all subagent results. Return to the caller for inclusion in the report.
 - Related Skill: `revert-pr` - The git revert workflow (`../revert-pr/SKILL.md`)
 - Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`../trigger-payload-job/SKILL.md`)
 - Related Skill: `analyze-payload` - Identifies revert candidates (`../analyze-payload/SKILL.md`)
-- Related Command: `/ci:payload-agent` - Autonomous orchestrator that uses this skill (`../../plugins/ci/commands/payload-agent.md`)
+- Related Command: `/payload-agent` - Autonomous orchestrator that uses this skill (`../../plugins/ci/commands/payload-agent.md`)

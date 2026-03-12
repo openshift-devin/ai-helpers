@@ -241,7 +241,7 @@ The CI system may attach **symptom labels** to job runs — machine-detected pat
 Metal IPI jobs use **dev-scripts** with **Metal3** and **Ironic** to install OpenShift on bare metal. These require specialized analysis.
 
 1. **Invoke the metal install failure skill**
-   - Use the Skill tool to invoke: `ci:prow-job-analyze-metal-install-failure`
+   - Use the Skill tool to invoke: `prow-job-analyze-metal-install-failure`
    - Pass the following information:
      - Build ID: `{build_id}`
      - Bucket path: `{bucket-path}`

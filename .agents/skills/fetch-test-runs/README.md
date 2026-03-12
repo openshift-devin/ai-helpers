@@ -113,4 +113,4 @@ Uses the production Sippy API at `https://sippy.dptools.openshift.org`. No authe
 
 - [SKILL.md](SKILL.md) - Complete implementation guide
 - Related: `fetch-regression-details` skill (provides input data)
-- Related: `/ci:analyze-regression` command (uses this skill with AI analysis)
+- Related: `/analyze-regression` command (uses this skill with AI analysis)

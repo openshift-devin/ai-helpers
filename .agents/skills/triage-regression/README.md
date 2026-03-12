@@ -104,4 +104,4 @@ This skill authenticates to `https://sippy-auth.dptools.openshift.org` using a B
 - [SKILL.md](SKILL.md) - Complete implementation guide
 - Related: `oc-auth` skill (provides authentication tokens for sippy-auth)
 - Related: `fetch-regression-details` skill (provides regression IDs and existing triage info)
-- Related: `/ci:analyze-regression` command (analyzes regressions and suggests triage)
+- Related: `/analyze-regression` command (analyzes regressions and suggests triage)

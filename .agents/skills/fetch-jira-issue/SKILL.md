@@ -210,8 +210,8 @@ Recent Comments (1 of 5 total):
 
 ## See Also
 
-- Related Command: `/ci:analyze-regression` - Uses this skill to check JIRA progress on triaged regressions
-- Related Command: `/ci:check-if-jira-regression-is-ongoing` - Uses this skill for JIRA bug analysis
+- Related Command: `/analyze-regression` - Uses this skill to check JIRA progress on triaged regressions
+- Related Command: `/check-if-jira-regression-is-ongoing` - Uses this skill for JIRA bug analysis
 - Related Skill: `fetch-regression-details` - Fetches regression data that may link to JIRA bugs
 - Related Skill: `triage-regression` - Creates triage records linking regressions to JIRA bugs
 - JIRA REST API: https://developer.atlassian.com/server/jira/platform/rest-apis/

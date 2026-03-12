@@ -434,4 +434,4 @@ fi
 ## See Also
 
 - Related Skill: `fetch-regression-details` (provides test_id and job_run_ids)
-- Related Command: `/ci:analyze-regression` (uses this skill for failure analysis)
+- Related Command: `/analyze-regression` (uses this skill for failure analysis)

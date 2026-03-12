@@ -15,7 +15,7 @@ The `fetch-regression-details` skill retrieves comprehensive regression data fro
 
 ## Usage
 
-This skill is used internally by the `/ci:analyze-regression` command but can also be invoked directly when you need to fetch regression details programmatically.
+This skill is used internally by the `/analyze-regression` command but can also be invoked directly when you need to fetch regression details programmatically.
 
 ### Input
 
@@ -93,5 +93,5 @@ See [SKILL.md](./SKILL.md) for complete implementation guidance.
 
 ## Related Commands
 
-- `/ci:analyze-regression` - Analyzes a regression using this skill
+- `/analyze-regression` - Analyzes a regression using this skill
 - `/teams:list-regressions` - Lists all regressions for a release

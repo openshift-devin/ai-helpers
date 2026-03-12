@@ -273,4 +273,4 @@ python3 "$FETCH_NEW_PRS" "$payload_tag" --format json
 
 - Related Skill: `fetch-prowjob-json` (provides payload tag from Prow job metadata)
 - Related Skill: `fetch-regression-details` (for correlating regressions with payload changes)
-- Related Command: `/ci:analyze-regression` (analyzes regressions that may be caused by new PRs)
+- Related Command: `/analyze-regression` (analyzes regressions that may be caused by new PRs)

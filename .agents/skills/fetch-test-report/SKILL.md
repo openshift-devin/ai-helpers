@@ -255,5 +255,5 @@ python3 ./fetch_test_report.py \
 - Related Skill: `fetch-releases` (determines the latest OCP release)
 - Related Skill: `fetch-regression-details` (uses `test_id` to fetch regression details)
 - Related Skill: `fetch-test-runs` (uses test name to fetch individual test run results)
-- Related Command: `/ci:fetch-test-report` (command that invokes this skill)
-- Related Command: `/ci:analyze-regression` (full regression analysis workflow)
+- Related Command: `/fetch-test-report` (command that invokes this skill)
+- Related Command: `/analyze-regression` (full regression analysis workflow)

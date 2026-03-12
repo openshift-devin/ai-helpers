@@ -116,8 +116,8 @@ Instruct each subagent as follows:
 > First, check the JUnit results or build log to determine whether this is an install failure (look for `install should succeed: overall` or similar install-related test failures) or a test failure (install passed, specific tests failed).
 >
 > Based on the failure type, use the appropriate skill:
-> - **Install failure**: Use the `ci:prow-job-analyze-install-failure` skill. **You MUST download and examine the actual installer log bundle** — do NOT skip this step or make assessments based only on high-level metadata like pass rates or job names. The log bundle contains the actual error messages that reveal the root cause. For metal/bare-metal jobs (job name contains "metal"), perform additional analysis using the `ci:prow-job-analyze-metal-install-failure` skill as needed for dev-scripts, Metal3/Ironic, and BareMetalHost-specific diagnostics.
-> - **Test failure**: Use the `ci:prow-job-analyze-test-failure` skill. Do NOT use `--fast` — always perform the full analysis including must-gather extraction and analysis.
+> - **Install failure**: Use the `prow-job-analyze-install-failure` skill. **You MUST download and examine the actual installer log bundle** — do NOT skip this step or make assessments based only on high-level metadata like pass rates or job names. The log bundle contains the actual error messages that reveal the root cause. For metal/bare-metal jobs (job name contains "metal"), perform additional analysis using the `prow-job-analyze-metal-install-failure` skill as needed for dev-scripts, Metal3/Ironic, and BareMetalHost-specific diagnostics.
+> - **Test failure**: Use the `prow-job-analyze-test-failure` skill. Do NOT use `--fast` — always perform the full analysis including must-gather extraction and analysis.
 >
 > **IMPORTANT — Classify failures based on log evidence, not assumptions.** You must examine the actual logs (installer log, log bundle, bootstrap journals, kube-apiserver logs) before classifying a failure. A bootstrap timeout could be infrastructure, a product bug, or a race condition — the logs will tell you which. Cite specific error messages in your assessment.
 >
@@ -332,7 +332,7 @@ This PR is causing the following blocking job(s) to fail in the {stream} {archit
 
 The job(s) were passing prior to payload {originating_payload_tag} and started failing when this PR landed ({streak_length} rejected payloads ago).
 
-/ci:revert-pr {pr_url}
+/revert-pr {pr_url}
 
 After the revert is merged and payloads are green again, the original author can investigate the root cause and re-land a corrected version of their change.</pre>
   </div>

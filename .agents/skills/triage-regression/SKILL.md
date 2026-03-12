@@ -314,4 +314,4 @@ python3 ./triage_regression.py \
 
 - Related Skill: `oc-auth` (provides authentication tokens for sippy-auth)
 - Related Skill: `fetch-regression-details` (provides regression IDs and existing triage info)
-- Related Command: `/ci:analyze-regression` (analyzes regressions and suggests triage)
+- Related Command: `/analyze-regression` (analyzes regressions and suggests triage)

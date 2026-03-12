@@ -466,7 +466,7 @@ CC: @originalauthor
 
 ## See Also
 
-- Related Command: `/ci:revert-pr` - The user-facing command that uses this skill (`../../plugins/ci/commands/revert-pr.md`)
+- Related Command: `/revert-pr` - The user-facing command that uses this skill (`../../plugins/ci/commands/revert-pr.md`)
 - Related Skill: `fetch-jira-issue` - Fetches JIRA issue details for automatic context extraction (`../fetch-jira-issue/SKILL.md`)
 - Revertomatic: https://github.com/stbenjam/revertomatic
 - OpenShift Quick Revert Policy: https://github.com/openshift/enhancements/blob/master/enhancements/release/improving-ci-signal.md#quick-revert

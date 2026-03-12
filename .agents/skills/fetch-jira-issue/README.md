@@ -15,7 +15,7 @@ The `fetch-jira-issue` skill retrieves comprehensive JIRA issue data including:
 
 ## Usage
 
-This skill is used internally by CI commands such as `/ci:analyze-regression` and `/ci:check-if-jira-regression-is-ongoing`, but can also be invoked directly.
+This skill is used internally by CI commands such as `/analyze-regression` and `/check-if-jira-regression-is-ongoing`, but can also be invoked directly.
 
 ### Input
 
@@ -77,5 +77,5 @@ python3 ./fetch_jira_issue.py OCPBUGS-74401 --format summary
 
 ## Related Commands
 
-- `/ci:analyze-regression` - Uses this skill to check JIRA progress on triaged regressions
-- `/ci:check-if-jira-regression-is-ongoing` - Uses this skill for JIRA bug analysis
+- `/analyze-regression` - Uses this skill to check JIRA progress on triaged regressions
+- `/check-if-jira-regression-is-ongoing` - Uses this skill for JIRA bug analysis
