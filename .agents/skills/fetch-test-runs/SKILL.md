@@ -39,7 +39,7 @@ Use this skill when you need to:
 
 ```bash
 # Path to the Python script
-script_path="plugins/ci/skills/fetch-test-runs/fetch_test_runs.py"
+script_path="./fetch_test_runs.py"
 
 # Fetch all test runs (failures only, by default)
 python3 "$script_path" "$test_id" --format json
@@ -307,14 +307,14 @@ Options:
 ### Example 1: Fetch All Failures for a Test
 
 ```bash
-script_path="plugins/ci/skills/fetch-test-runs/fetch_test_runs.py"
+script_path="./fetch_test_runs.py"
 python3 "$script_path" "openshift-tests:bb3a7d828630760296ef203c5cacf708" --format json
 ```
 
 ### Example 2: Fetch All Runs Including Successes
 
 ```bash
-script_path="plugins/ci/skills/fetch-test-runs/fetch_test_runs.py"
+script_path="./fetch_test_runs.py"
 python3 "$script_path" "openshift-tests:bb3a7d828630760296ef203c5cacf708" --include-success --format json
 ```
 
@@ -328,7 +328,7 @@ test_id=$(echo "$regression_data" | jq -r '.test_id')
 job_run_ids=$(echo "$regression_data" | jq -r '.sample_failed_jobs | to_entries[] | .value.failed_runs[] | .job_run_id' | tr '\n' ',' | sed 's/,$//')
 
 # Fetch outputs for specific job runs
-script_path="plugins/ci/skills/fetch-test-runs/fetch_test_runs.py"
+script_path="./fetch_test_runs.py"
 output_data=$(python3 "$script_path" "$test_id" "$job_run_ids" --format json)
 
 # Check success
@@ -340,7 +340,7 @@ fi
 ### Example 4: Get Summary Report
 
 ```bash
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   "openshift-tests:71c053c318c11cfc47717b9cf711c326" \
   --format summary
 ```
@@ -369,7 +369,7 @@ fi
 Filter to runs from jobs matching multiple criteria (e.g., GCP + techpreview):
 
 ```bash
-script_path="plugins/ci/skills/fetch-test-runs/fetch_test_runs.py"
+script_path="./fetch_test_runs.py"
 
 # Get only GCP techpreview runs (both substrings must match, server-side)
 python3 "$script_path" "openshift-tests:abc123" --include-success \
@@ -392,7 +392,7 @@ python3 "$script_path" "openshift-tests:abc123" \
 Used by analyze-regression command to find when failures began:
 
 ```bash
-script_path="plugins/ci/skills/fetch-test-runs/fetch_test_runs.py"
+script_path="./fetch_test_runs.py"
 
 # Get the job with the most failures
 most_failed_job="periodic-ci-openshift-release-master-nightly-4.22-e2e-metal-ipi-ovn"

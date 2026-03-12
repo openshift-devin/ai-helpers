@@ -68,7 +68,7 @@ Use the "Parse and Validate URL" steps from "Prow Job Analyze Resource" skill
 
 ### Step 3: Download and Validate prowjob.json
 
-Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `plugins/ci/skills/fetch-prowjob-json/SKILL.md` for complete implementation details.
+Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `../fetch-prowjob-json/SKILL.md` for complete implementation details.
 
 1. **Fetch prowjob.json** using the Prow job URL (convert to gcsweb URL per the `fetch-prowjob-json` skill)
 2. **Save locally** to `.work/prow-job-analyze-test-failure/{build_id}/logs/prowjob.json`
@@ -412,7 +412,7 @@ Only if user chose "Yes" in Step 4.5:
    For Pattern 3 (standard only):
    ```bash
    # Use existing extract_archives.py script for standard must-gather
-   python3 plugins/ci/skills/prow-job-extract-must-gather/extract_archives.py \
+   python3 ../prow-job-extract-must-gather/extract_archives.py \
      .work/prow-job-analyze-test-failure/{build_id}/must-gather/tmp/must-gather.tar \
      .work/prow-job-analyze-test-failure/{build_id}/must-gather/logs
    ```
@@ -591,7 +591,7 @@ Only if Step 4.6 completed successfully:
    # Try to find the must-gather-analyzer scripts in common locations
    for SEARCH_PATH in \
        "plugins/must-gather/skills/must-gather-analyzer/scripts" \
-       "~/.claude/plugins/cache/*/plugins/must-gather/skills/must-gather-analyzer/scripts" \
+       "../../plugins/must-gather/skills/must-gather-analyzer/scripts" \
        "$(find ~ -type d -path "*/must-gather/skills/must-gather-analyzer/scripts" 2>/dev/null | head -1)"; do
        SCRIPTS_DIR=$(eval echo "$SEARCH_PATH")
        if [ -d "$SCRIPTS_DIR" ] && [ -f "$SCRIPTS_DIR/analyze_clusteroperators.py" ]; then

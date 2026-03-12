@@ -50,9 +50,9 @@ The first argument is a **full payload tag** (e.g., `4.22.0-0.nightly-2026-02-25
 Fetch recent payloads without filtering by phase, so the full payload history is available for analysis and lookback:
 
 ```bash
-FETCH_PAYLOADS="${CLAUDE_PLUGIN_ROOT}/skills/fetch-payloads/fetch_payloads.py"
+FETCH_PAYLOADS="../fetch-payloads/fetch_payloads.py"
 if [ ! -f "$FETCH_PAYLOADS" ]; then
-  FETCH_PAYLOADS=$(find ~/.claude/plugins -type f -path "*/ci/skills/fetch-payloads/fetch_payloads.py" 2>/dev/null | sort | head -1)
+  true  # script is at ../fetch-payloads/fetch_payloads.py
 fi
 if [ -z "$FETCH_PAYLOADS" ] || [ ! -f "$FETCH_PAYLOADS" ]; then echo "ERROR: fetch_payloads.py not found" >&2; exit 2; fi
 python3 "$FETCH_PAYLOADS" <architecture> <version> <stream> --limit <lookback * 2>
@@ -89,9 +89,9 @@ For each failed job, record:
 For each unique originating payload identified in Step 3, fetch the PRs that were new in that payload:
 
 ```bash
-FETCH_NEW_PRS="${CLAUDE_PLUGIN_ROOT}/skills/fetch-new-prs-in-payload/fetch_new_prs_in_payload.py"
+FETCH_NEW_PRS="../fetch-new-prs-in-payload/fetch_new_prs_in_payload.py"
 if [ ! -f "$FETCH_NEW_PRS" ]; then
-  FETCH_NEW_PRS=$(find ~/.claude/plugins -type f -path "*/ci/skills/fetch-new-prs-in-payload/fetch_new_prs_in_payload.py" 2>/dev/null | sort | head -1)
+  true  # script is at ../fetch-new-prs-in-payload/fetch_new_prs_in_payload.py
 fi
 if [ -z "$FETCH_NEW_PRS" ] || [ ! -f "$FETCH_NEW_PRS" ]; then echo "ERROR: fetch_new_prs_in_payload.py not found" >&2; exit 2; fi
 python3 "$FETCH_NEW_PRS" <originating_payload_tag> --format json

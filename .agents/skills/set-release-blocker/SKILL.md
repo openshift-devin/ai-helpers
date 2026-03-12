@@ -18,19 +18,19 @@ See the [release blocker definition](https://github.com/openshift/enhancements/b
 
 ```bash
 # Set Release Blocker to Approved (default)
-python3 plugins/ci/skills/set-release-blocker/set_release_blocker.py OCPBUGS-76523
+python3 ./set_release_blocker.py OCPBUGS-76523
 
 # Explicitly set to Approved
-python3 plugins/ci/skills/set-release-blocker/set_release_blocker.py OCPBUGS-76523 --value Approved
+python3 ./set_release_blocker.py OCPBUGS-76523 --value Approved
 
 # Set to Rejected
-python3 plugins/ci/skills/set-release-blocker/set_release_blocker.py OCPBUGS-76523 --value Rejected
+python3 ./set_release_blocker.py OCPBUGS-76523 --value Rejected
 
 # Clear the field
-python3 plugins/ci/skills/set-release-blocker/set_release_blocker.py OCPBUGS-76523 --value ""
+python3 ./set_release_blocker.py OCPBUGS-76523 --value ""
 
 # JSON output
-python3 plugins/ci/skills/set-release-blocker/set_release_blocker.py OCPBUGS-76523 --format json
+python3 ./set_release_blocker.py OCPBUGS-76523 --format json
 ```
 
 ## JIRA Field Details

@@ -36,7 +36,7 @@ Use this skill when you need to:
 If the user did not specify a release, use the `fetch-releases` skill to determine the latest OCP release:
 
 ```bash
-release=$(python3 plugins/ci/skills/fetch-releases/fetch_releases.py --latest)
+release=$(python3 ../fetch-releases/fetch_releases.py --latest)
 ```
 
 If the user specified a release, use that directly.
@@ -47,7 +47,7 @@ The skill uses a Python script to query the Sippy tests API:
 
 ```bash
 # Path to the Python script
-script_path="plugins/ci/skills/fetch-test-report/fetch_test_report.py"
+script_path="./fetch_test_report.py"
 
 # Fetch test report in JSON format (collapsed — one row for the test across all variants)
 python3 "$script_path" "<test_name>" --release "$release" --format json
@@ -186,7 +186,7 @@ python3 fetch_test_report.py
 ### Example 1: Fetch Test Report in JSON Format
 
 ```bash
-python3 plugins/ci/skills/fetch-test-report/fetch_test_report.py \
+python3 ./fetch_test_report.py \
   "[sig-api-machinery] Discovery should validate PreferredVersion for each APIGroup [Conformance]" \
   --release 4.22 --format json
 ```
@@ -194,7 +194,7 @@ python3 plugins/ci/skills/fetch-test-report/fetch_test_report.py \
 ### Example 2: Get a Human-Readable Summary
 
 ```bash
-python3 plugins/ci/skills/fetch-test-report/fetch_test_report.py \
+python3 ./fetch_test_report.py \
   "[sig-api-machinery] Discovery should validate PreferredVersion for each APIGroup [Conformance]" \
   --release 4.22 --format summary
 ```
@@ -225,7 +225,7 @@ Test: [sig-api-machinery] Discovery should validate PreferredVersion for each AP
 ### Example 3: Fetch Per-Variant Breakdown
 
 ```bash
-python3 plugins/ci/skills/fetch-test-report/fetch_test_report.py \
+python3 ./fetch_test_report.py \
   "[sig-api-machinery] Discovery should validate PreferredVersion for each APIGroup [Conformance]" \
   --release 4.22 --no-collapse --format summary
 ```
@@ -235,7 +235,7 @@ This returns one row per variant combination, showing which specific job types t
 ### Example 4: Fetch Test Report for a Different Release
 
 ```bash
-python3 plugins/ci/skills/fetch-test-report/fetch_test_report.py \
+python3 ./fetch_test_report.py \
   "[sig-api-machinery] Discovery should validate PreferredVersion for each APIGroup [Conformance]" \
   --release 4.21 --format json
 ```

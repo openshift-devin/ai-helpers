@@ -76,10 +76,10 @@ No authentication is required for read-only access.
 
 ```bash
 # Fetch as JSON (default, includes failed jobs)
-python3 plugins/ci/skills/fetch-regression-details/fetch_regression_details.py 34446
+python3 ./fetch_regression_details.py 34446
 
 # Fetch as human-readable summary
-python3 plugins/ci/skills/fetch-regression-details/fetch_regression_details.py 34446 --format summary
+python3 ./fetch_regression_details.py 34446 --format summary
 ```
 
 ## Implementation Details

@@ -121,7 +121,7 @@ Job names contain important clues about the test environment and what to look fo
 
 ### Step 3: Download prowjob.json and Identify Target
 
-Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `plugins/ci/skills/fetch-prowjob-json/SKILL.md` for complete implementation details.
+Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `../fetch-prowjob-json/SKILL.md` for complete implementation details.
 
 1. **Fetch prowjob.json** using the Prow job URL (convert to gcsweb URL per the `fetch-prowjob-json` skill)
 2. **Save locally** to `.work/prow-job-analyze-install-failure/{build_id}/logs/prowjob.json`

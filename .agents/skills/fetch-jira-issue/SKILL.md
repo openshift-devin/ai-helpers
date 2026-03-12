@@ -38,7 +38,7 @@ Use this skill when you need to:
 
 ```bash
 # Path to the Python script
-script_path="plugins/ci/skills/fetch-jira-issue/fetch_jira_issue.py"
+script_path="./fetch_jira_issue.py"
 
 # Fetch issue data in JSON format (default)
 python3 "$script_path" OCPBUGS-74401 --format json

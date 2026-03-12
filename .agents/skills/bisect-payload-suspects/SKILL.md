@@ -73,7 +73,7 @@ Record the draft revert PR URL.
 
 #### 1.3: Trigger Payload Jobs and Collect Run URLs
 
-Use the `trigger-payload-job` skill (`plugins/ci/skills/trigger-payload-job/SKILL.md`) to trigger payload validation jobs on the draft revert PR and collect the resulting URLs. Pass:
+Use the `trigger-payload-job` skill (`../trigger-payload-job/SKILL.md`) to trigger payload validation jobs on the draft revert PR and collect the resulting URLs. Pass:
 
 - `pr_url`: The draft revert PR URL
 - `jobs`: The `failing_jobs` list for this suspect (includes `job_name`, `is_aggregated`, `underlying_job_name` for each job)
@@ -204,7 +204,7 @@ Return results to the caller for inclusion in the final report.
 
 ## See Also
 
-- Related Skill: `revert-pr` - The git revert workflow (`plugins/ci/skills/revert-pr/SKILL.md`)
-- Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`plugins/ci/skills/trigger-payload-job/SKILL.md`)
-- Related Skill: `stage-payload-reverts` - Stages high-confidence reverts (`plugins/ci/skills/stage-payload-reverts/SKILL.md`)
-- Related Command: `/ci:payload-agent` - Autonomous orchestrator that uses this skill (`plugins/ci/commands/payload-agent.md`)
+- Related Skill: `revert-pr` - The git revert workflow (`../revert-pr/SKILL.md`)
+- Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`../trigger-payload-job/SKILL.md`)
+- Related Skill: `stage-payload-reverts` - Stages high-confidence reverts (`../stage-payload-reverts/SKILL.md`)
+- Related Command: `/ci:payload-agent` - Autonomous orchestrator that uses this skill (`../../plugins/ci/commands/payload-agent.md`)

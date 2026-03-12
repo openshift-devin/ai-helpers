@@ -268,8 +268,8 @@ After report generation:
 
 ## See Also
 
-- Related Command: `/ci:payload-agent` - The user-facing command (`plugins/ci/commands/payload-agent.md`)
-- Related Skill: `analyze-payload` - Core analysis logic (`plugins/ci/skills/analyze-payload/SKILL.md`)
-- Related Skill: `stage-payload-reverts` - High-confidence revert staging (`plugins/ci/skills/stage-payload-reverts/SKILL.md`)
-- Related Skill: `bisect-payload-suspects` - Medium-confidence bisect experiments (`plugins/ci/skills/bisect-payload-suspects/SKILL.md`)
-- Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`plugins/ci/skills/trigger-payload-job/SKILL.md`)
+- Related Command: `/ci:payload-agent` - The user-facing command (`../../plugins/ci/commands/payload-agent.md`)
+- Related Skill: `analyze-payload` - Core analysis logic (`../analyze-payload/SKILL.md`)
+- Related Skill: `stage-payload-reverts` - High-confidence revert staging (`../stage-payload-reverts/SKILL.md`)
+- Related Skill: `bisect-payload-suspects` - Medium-confidence bisect experiments (`../bisect-payload-suspects/SKILL.md`)
+- Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`../trigger-payload-job/SKILL.md`)

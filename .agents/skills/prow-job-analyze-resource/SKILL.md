@@ -120,7 +120,7 @@ For each comma-delimited resource spec:
 
 ### Step 4: Download and Validate prowjob.json
 
-Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `plugins/ci/skills/fetch-prowjob-json/SKILL.md` for complete implementation details.
+Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `../fetch-prowjob-json/SKILL.md` for complete implementation details.
 
 1. **Fetch prowjob.json** using the Prow job URL (convert to gcsweb URL per the `fetch-prowjob-json` skill)
 2. **Save locally** to `.work/prow-job-analyze-resource/{build_id}/logs/prowjob.json`
@@ -164,7 +164,7 @@ Use the `fetch-prowjob-json` skill to fetch the prowjob.json for this job. See `
 
 **Usage:**
 ```bash
-python3 plugins/ci/skills/prow-job-analyze-resource/parse_all_logs.py <resource_pattern> \
+python3 ./parse_all_logs.py <resource_pattern> \
   .work/prow-job-analyze-resource/{build_id}/logs/artifacts/{target}/gather-extra/artifacts/audit_logs \
   .work/prow-job-analyze-resource/{build_id}/logs/artifacts/{target}/gather-extra/artifacts/pods \
   > .work/prow-job-analyze-resource/{build_id}/tmp/all_entries.json
@@ -253,7 +253,7 @@ python3 plugins/ci/skills/prow-job-analyze-resource/parse_all_logs.py <resource_
 
 **Usage:**
 ```bash
-python3 plugins/ci/skills/prow-job-analyze-resource/generate_html_report.py \
+python3 ./generate_html_report.py \
   .work/prow-job-analyze-resource/{build_id}/tmp/all_entries.json \
   "{prowjob_name}" \
   "{build_id}" \
@@ -573,7 +573,7 @@ Output:
    - Non-ci-operator jobs cannot be analyzed (they don't have --target)
 
 4. **Working with Scripts:**
-   - All scripts are in `plugins/ci/skills/prow-job-analyze-resource/`
+   - All scripts are in the current skill directory (`.`)
    - `parse_all_logs.py` - Parses audit logs and pod logs, outputs JSON
      - Detects glog severity levels (E=error, W=warn, I=info, F=fatal)
      - Supports regex patterns for resource matching

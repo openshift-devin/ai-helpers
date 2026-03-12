@@ -38,9 +38,9 @@ The skill uses a Python script to fetch and format the payload diff data:
 
 ```bash
 # Locate the Python script
-FETCH_NEW_PRS="${CLAUDE_PLUGIN_ROOT}/skills/fetch-new-prs-in-payload/fetch_new_prs_in_payload.py"
+FETCH_NEW_PRS="./fetch_new_prs_in_payload.py"
 if [ ! -f "$FETCH_NEW_PRS" ]; then
-  FETCH_NEW_PRS=$(find ~/.claude/plugins -type f -path "*/ci/skills/fetch-new-prs-in-payload/fetch_new_prs_in_payload.py" 2>/dev/null | sort | head -1)
+  true  # script is at ./fetch_new_prs_in_payload.py
 fi
 if [ -z "$FETCH_NEW_PRS" ] || [ ! -f "$FETCH_NEW_PRS" ]; then echo "ERROR: fetch_new_prs_in_payload.py not found" >&2; exit 2; fi
 

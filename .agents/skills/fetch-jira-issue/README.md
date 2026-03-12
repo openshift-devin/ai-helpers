@@ -69,10 +69,10 @@ Authentication via Bearer token is required.
 
 ```bash
 # Fetch as JSON (default)
-python3 plugins/ci/skills/fetch-jira-issue/fetch_jira_issue.py OCPBUGS-74401
+python3 ./fetch_jira_issue.py OCPBUGS-74401
 
 # Fetch as human-readable summary
-python3 plugins/ci/skills/fetch-jira-issue/fetch_jira_issue.py OCPBUGS-74401 --format summary
+python3 ./fetch_jira_issue.py OCPBUGS-74401 --format summary
 ```
 
 ## Related Commands

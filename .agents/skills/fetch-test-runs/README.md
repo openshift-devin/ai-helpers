@@ -17,31 +17,31 @@ Key features:
 
 ```bash
 # Fetch all failures for a test
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   <test_id> \
   [--format json|summary]
 
 # Include successful runs
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   <test_id> \
   --include-success \
   [--format json|summary]
 
 # Filter to a specific Prow job
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   <test_id> \
   --job-contains "periodic-ci-openshift-release-..." \
   [--format json|summary]
 
 # Get full history for a specific job (for regression start analysis)
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   <test_id> \
   --include-success \
   --job-contains "periodic-ci-openshift-release-..." \
   [--format json|summary]
 
 # Filter to specific job run IDs (backward compatible)
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   <test_id> \
   <job_run_id1,job_run_id2,...> \
   [--format json|summary]
@@ -65,13 +65,13 @@ test_id=$(echo "$regression_data" | jq -r '.test_id')
 job_run_ids=$(echo "$regression_data" | jq -r '.sample_failed_jobs | to_entries[] | .value.failed_runs[] | .job_run_id' | tr '\n' ',' | sed 's/,$//')
 
 # Fetch test runs (backward compatible with analyze-regression)
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   "$test_id" \
   "$job_run_ids" \
   --format json
 
 # Or fetch all runs for a test including successes
-python3 plugins/ci/skills/fetch-test-runs/fetch_test_runs.py \
+python3 ./fetch_test_runs.py \
   "$test_id" \
   --include-success \
   --format json

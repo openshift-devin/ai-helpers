@@ -34,7 +34,7 @@ This skill is a building block used by other analysis workflows. Use it when you
 ## Script Location
 
 ```
-plugins/ci/skills/prow-job-artifact-search/prow_job_artifact_search.py
+./prow_job_artifact_search.py
 ```
 
 ## Operations
@@ -44,7 +44,7 @@ plugins/ci/skills/prow-job-artifact-search/prow_job_artifact_search.py
 List files and subdirectories at a given path within the job's artifact tree.
 
 ```bash
-python3 plugins/ci/skills/prow-job-artifact-search/prow_job_artifact_search.py \
+python3 ./prow_job_artifact_search.py \
   <prow-url> list [subpath]
 ```
 
@@ -94,7 +94,7 @@ python3 .../prow_job_artifact_search.py <url> list artifacts/e2e-test/gather-ext
 Recursively search for files matching a glob pattern under a given path.
 
 ```bash
-python3 plugins/ci/skills/prow-job-artifact-search/prow_job_artifact_search.py \
+python3 ./prow_job_artifact_search.py \
   <prow-url> search <pattern> [subpath]
 ```
 
@@ -148,7 +148,7 @@ python3 .../prow_job_artifact_search.py <url> search "**/must-gather*"
 Download and return the contents of a specific file from the job's artifacts.
 
 ```bash
-python3 plugins/ci/skills/prow-job-artifact-search/prow_job_artifact_search.py \
+python3 ./prow_job_artifact_search.py \
   <prow-url> fetch <filepath> [--max-bytes N]
 ```
 

@@ -25,13 +25,13 @@ No authentication required (uses production Sippy URL).
 
 ```bash
 # Fetch all related triages (default: all confidence levels)
-python3 plugins/ci/skills/fetch-related-triages/fetch_related_triages.py 35479
+python3 ./fetch_related_triages.py 35479
 
 # Filter to high confidence matches only
-python3 plugins/ci/skills/fetch-related-triages/fetch_related_triages.py 35479 --min-confidence 5
+python3 ./fetch_related_triages.py 35479 --min-confidence 5
 
 # Human-readable summary
-python3 plugins/ci/skills/fetch-related-triages/fetch_related_triages.py 35479 --format summary
+python3 ./fetch_related_triages.py 35479 --format summary
 ```
 
 ## Arguments

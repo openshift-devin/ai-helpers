@@ -20,7 +20,7 @@ Key features:
 TOKEN=$(oc whoami -t --context=<dpcr-context>)
 
 # Create a new triage for a single regression
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   <regression_ids> \
   --token "$TOKEN" \
   --url <jira_url> \
@@ -29,7 +29,7 @@ python3 plugins/ci/skills/triage-regression/triage_regression.py \
   [--format json|summary]
 
 # Create a new triage for multiple regressions
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   <id1,id2,id3> \
   --token "$TOKEN" \
   --url <jira_url> \
@@ -38,7 +38,7 @@ python3 plugins/ci/skills/triage-regression/triage_regression.py \
   [--format json|summary]
 
 # Update an existing triage (add regressions; url and type inherited from existing triage)
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   <regression_ids> \
   --token "$TOKEN" \
   --triage-id <existing_triage_id> \
@@ -65,7 +65,7 @@ python3 plugins/ci/skills/triage-regression/triage_regression.py \
 
 ```bash
 # Create a triage linking three regressions to one bug
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   33639,33640,33641 \
   --token "$TOKEN" \
   --url "https://issues.redhat.com/browse/OCPBUGS-12345" \

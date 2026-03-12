@@ -67,7 +67,7 @@ fi
 ### Step 2: Run the Python Script
 
 ```bash
-script_path="plugins/ci/skills/triage-regression/triage_regression.py"
+script_path="./triage_regression.py"
 
 # Create a new triage for one regression
 python3 "$script_path" 33639 \
@@ -253,7 +253,7 @@ Error: Invalid type 'invalid'. Must be one of: product, test, ci-infra, product-
 ### Example 1: Triage a Single Regression
 
 ```bash
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   33639 \
   --token "$TOKEN" \
   --url "https://issues.redhat.com/browse/OCPBUGS-12345" \
@@ -264,7 +264,7 @@ python3 plugins/ci/skills/triage-regression/triage_regression.py \
 ### Example 2: Triage Multiple Related Regressions
 
 ```bash
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   33639,33640,33641 \
   --token "$TOKEN" \
   --url "https://issues.redhat.com/browse/OCPBUGS-12345" \
@@ -280,7 +280,7 @@ python3 plugins/ci/skills/triage-regression/triage_regression.py \
 existing_triage_id=$(echo "$regression_data" | jq -r '.triages[0].id')
 
 # Update it with additional regression IDs (url and type inherited from existing triage)
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   33639,33640,33641,33642 \
   --token "$TOKEN" \
   --triage-id "$existing_triage_id" \
@@ -290,7 +290,7 @@ python3 plugins/ci/skills/triage-regression/triage_regression.py \
 ### Example 4: Triage a Test Flake
 
 ```bash
-python3 plugins/ci/skills/triage-regression/triage_regression.py \
+python3 ./triage_regression.py \
   33639 \
   --token "$TOKEN" \
   --url "https://issues.redhat.com/browse/OCPBUGS-67890" \

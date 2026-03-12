@@ -31,7 +31,7 @@ Use this skill when you need to:
 To get just the latest OCP release version:
 
 ```bash
-release=$(python3 plugins/ci/skills/fetch-releases/fetch_releases.py --latest)
+release=$(python3 ./fetch_releases.py --latest)
 echo "$release"
 # Output: 4.22
 ```
@@ -42,10 +42,10 @@ To list all available OCP releases:
 
 ```bash
 # JSON format (includes GA dates)
-python3 plugins/ci/skills/fetch-releases/fetch_releases.py --format json
+python3 ./fetch_releases.py --format json
 
 # Simple list, one per line
-python3 plugins/ci/skills/fetch-releases/fetch_releases.py --format list
+python3 ./fetch_releases.py --format list
 ```
 
 ### Step 3: Use with Other Skills
@@ -54,10 +54,10 @@ The primary use case is providing a default release to other skills:
 
 ```bash
 # Determine release
-release="${user_specified_release:-$(python3 plugins/ci/skills/fetch-releases/fetch_releases.py --latest)}"
+release="${user_specified_release:-$(python3 ./fetch_releases.py --latest)}"
 
 # Use with fetch-test-report
-python3 plugins/ci/skills/fetch-test-report/fetch_test_report.py "<test_name>" --release "$release"
+python3 ../fetch-test-report/fetch_test_report.py "<test_name>" --release "$release"
 ```
 
 ## Output Format

@@ -80,7 +80,7 @@ gh pr list --repo <org>/<repo> --search "revert <pr_number>" --json number,title
 
 If an open or draft revert PR is found for this PR number, reuse its URL — skip the revert-pr skill and proceed to Substep 3.
 
-**Create** (only if no existing revert PR found): Load the `revert-pr` skill (`plugins/ci/skills/revert-pr/SKILL.md`) and follow its workflow:
+**Create** (only if no existing revert PR found): Load the `revert-pr` skill (`../revert-pr/SKILL.md`) and follow its workflow:
 
 - PR URL: the offending PR
 - JIRA ticket: the TRT key from Substep 1
@@ -91,7 +91,7 @@ Record the revert PR URL (created or reused).
 
 ### Substep 3: Trigger Payload Jobs and Collect Run URLs
 
-Use the `trigger-payload-job` skill (`plugins/ci/skills/trigger-payload-job/SKILL.md`) to trigger payload validation jobs on the revert PR and collect the resulting URLs. Pass:
+Use the `trigger-payload-job` skill (`../trigger-payload-job/SKILL.md`) to trigger payload validation jobs on the revert PR and collect the resulting URLs. Pass:
 
 - `pr_url`: The revert PR URL from Substep 2
 - `jobs`: The `failing_jobs` list for this candidate (includes `job_name`, `is_aggregated`, `underlying_job_name` for each job)
@@ -130,7 +130,7 @@ Collect all subagent results. Return to the caller for inclusion in the report.
 
 ## See Also
 
-- Related Skill: `revert-pr` - The git revert workflow (`plugins/ci/skills/revert-pr/SKILL.md`)
-- Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`plugins/ci/skills/trigger-payload-job/SKILL.md`)
-- Related Skill: `analyze-payload` - Identifies revert candidates (`plugins/ci/skills/analyze-payload/SKILL.md`)
-- Related Command: `/ci:payload-agent` - Autonomous orchestrator that uses this skill (`plugins/ci/commands/payload-agent.md`)
+- Related Skill: `revert-pr` - The git revert workflow (`../revert-pr/SKILL.md`)
+- Related Skill: `trigger-payload-job` - Triggers payload jobs and collects URLs (`../trigger-payload-job/SKILL.md`)
+- Related Skill: `analyze-payload` - Identifies revert candidates (`../analyze-payload/SKILL.md`)
+- Related Command: `/ci:payload-agent` - Autonomous orchestrator that uses this skill (`../../plugins/ci/commands/payload-agent.md`)

@@ -26,11 +26,11 @@ The skill provides a single `curl_with_token.sh` script that wraps curl and auto
   When referencing files from this skill (scripts, configuration files, etc.), you MUST:
 
   1. **Always use the "Base directory" path** provided at the top of this skill prompt
-  2. **Never assume** skills are located in `~/.claude/plugins/`
+  2. **Never assume** skills are located in `~/.claude/plugins/` or `.agents/skills/`
   3. **Construct full absolute paths** by combining the base directory with the relative file path
 
   **Example:**
-  - ❌ WRONG: `~/.claude/plugins/ci/skills/oc-auth/curl_with_token.sh`
+  - ❌ WRONG: `~/.claude/./curl_with_token.sh`
   - ✅ CORRECT: Use the base directory shown above + `/curl_with_token.sh`
 
   If you see "no such file or directory" errors, verify you're using the base directory path, not the assumed marketplace cache location.
